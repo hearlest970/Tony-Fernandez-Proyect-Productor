@@ -1,0 +1,23 @@
+@import url(./normalize.css);
+
+:root {
+  --primary-color     : #9A1252;
+  --blue-light-color  : #A0D2EB;
+  --blue-dark-color   : #092047;
+  --gray-color        : #494D5F;
+  --purple-light-color: #D0BDF4;
+  --purple-dark-color : #8458B3;
+  --black-color       : #000;
+  --black-color-alpha : #000000bf;
+  --white-color       : #fff;
+  --z-back            : -10;
+  --z-normal          : 1;
+  --z-tooltip         : 10;
+  --z-fixed           : 100;
+  --z-modal           : 1000;
+}
+
+.container {
+  max-width: 1300px;
+  margin   : 0 auto;
+}
