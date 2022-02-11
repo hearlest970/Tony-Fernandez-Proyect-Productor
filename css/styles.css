@@ -28,11 +28,106 @@ body {
   margin   : 0 auto;
 }
 
+.background-one {
+  width            : 100%;
+  height           : 70vh;
+  background-image : url(./../img/section-one.jpg);
+  background-repeat: no-repeat;
+  background-size  : cover;
+  object-fit       : contain;
+  position         : relative;
+}
+
+/* Header */
+
+.header__content {
+  display: flex;
+}
+
+.header__navbar img {
+  width : 10%;
+  margin: 10px;
+}
+
+.header__nav-container {
+  display: none;
+}
+
+.header__btn {
+  color  : var(--white-color);
+  padding: 15px;
+}
+
+/* Section Home */
+
+.home__images {
+  display       : flex;
+  flex-direction: column;
+  align-items   : center;
+  list-style    : none;
+}
+
+.home__images img {
+  width: 50%;
+}
+
+.home__button a {
+  padding         : 4px 35px;
+  border-radius   : 15px;
+  text-decoration : none;
+  background-color: var(--primary-color);
+  color           : var(--white-color);
+}
+
+/* Section About */
+
+.background-two {
+  width            : 100%;
+  height           : auto;
+  background-image : url(./../img/section-two.jpg);
+  background-repeat: repeat;
+  background-size  : cover;
+  object-fit       : contain;
+  position         : relative;
+}
+
+.background-two::after {
+  content   : '';
+  width     : 100%;
+  height    : 100%;
+  position  : absolute;
+  top       : 0;
+  left      : 0;
+  background: var(--black-color-alpha);
+}
+
+.about {
+  display       : flex;
+  padding-top   : 100px;
+  flex-direction: column;
+  align-items   : center;
+  position      : relative;
+  color         : var(--white-color);
+}
+
+.about>*,
+.services {
+  z-index: var(--z-normal);
+}
+
+.about p {
+  font-size  : 13px;
+  margin     : 20px;
+  text-align : center;
+  line-height: 1.75;
+}
+
 /* Section Services */
 
 .services {
-  width  : 100%;
-  padding: 3rem 0;
+  width   : 100%;
+  padding : 3rem 0;
+  position: relative;
 }
 
 .services__title {
@@ -86,12 +181,14 @@ body {
 }
 
 /* Section Channel YT */
+
 .channel-yt {
   padding          : 3rem 0;
   background-image : url(../img/section-three.jpg);
   background-repeat: no-repeat;
   background-size  : cover;
   object-position  : center;
+  position         : relative;
 }
 
 .channel-yt__title {
@@ -123,15 +220,21 @@ body {
 }
 
 .channel-yt__video {
-  width           : 80%;
-  height          : 350px;
-  background-color: var(--primary-color);
+  width : 90%;
+  height: 315px;
+  margin: 0 auto;
+}
+
+.channel-yt__video iframe {
+  width     : 100%;
+  height    : 100%;
+  box-shadow: var(--black-color-alpha) 0 5px 15px;
 }
 
 /* Products Section */
 .products {
-  height           : 50vh;
-  padding          : 3rem 0;
+  height           : 700px;
+  padding          : 5rem 0;
   background-image : url(../img/section-four.jpg);
   background-repeat: no-repeat;
   background-size  : cover;
@@ -186,6 +289,11 @@ body {
     width  : 40%;
     padding: 1rem;
   }
+
+  .channel-yt__video {
+    width : 70%;
+    height: 400px;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -222,12 +330,12 @@ body {
   }
 
   .channel-yt__video {
-    width : 350px;
-    height: 250px;
+    width : 100%;
+    height: 315px;
   }
 
   .products {
-    height: auto;
+    height: 1200px;
   }
 
   .products__btn {
