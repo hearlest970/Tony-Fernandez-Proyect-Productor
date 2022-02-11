@@ -1,4 +1,5 @@
 @import url(./normalize.css);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
 :root {
   --primary-color     : #9A1252;
@@ -17,7 +18,97 @@
   --z-modal           : 1000;
 }
 
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size  : 16px;
+}
+
 .container {
   max-width: 1300px;
   margin   : 0 auto;
+}
+
+.services {
+  width            : 100%;
+  padding          : 3rem 0;
+  background-image : url(../img/section-three.jpg);
+  background-repeat: no-repeat;
+  background-size  : cover;
+  object-position  : center;
+}
+
+.services__title {
+  margin-bottom : 1.25rem;
+  color         : var(--white-color);
+  text-align    : center;
+  font-size     : 1.5rem;
+  font-weight   : 700;
+  letter-spacing: 1px;
+}
+
+.services__container {
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+  flex-flow      : column wrap;
+}
+
+.services__service {
+  width          : 90%;
+  height         : 300px;
+  margin         : 1rem 0;
+  border         : 1px solid var(--primary-color);
+  border-radius  : 2rem;
+  text-align     : center;
+  display        : flex;
+  flex-direction : column;
+  justify-content: space-around;
+  align-items    : center;
+}
+
+.services__text,
+.services__icon {
+  color: var(--white-color);
+}
+
+.services__icon {
+  font-size: 5rem;
+}
+
+.services__text h4 {
+  text-transform: uppercase;
+}
+
+.services__text p {
+  margin: 1rem 0;
+}
+
+.services__price {
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .services__container {
+    flex-flow: row wrap;
+  }
+
+  .services__service {
+    width: 40%;
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .services__title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .services__container {
+    justify-content: space-evenly;
+  }
+
+  .services__service {
+    width: 30vw;
+  }
 }
