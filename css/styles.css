@@ -28,13 +28,11 @@ body {
   margin   : 0 auto;
 }
 
+/* Section Services */
+
 .services {
-  width            : 100%;
-  padding          : 3rem 0;
-  background-image : url(../img/section-three.jpg);
-  background-repeat: no-repeat;
-  background-size  : cover;
-  object-position  : center;
+  width  : 100%;
+  padding: 3rem 0;
 }
 
 .services__title {
@@ -87,20 +85,66 @@ body {
   font-weight: 700;
 }
 
+/* Section Channel YT */
+.channel-yt {
+  padding          : 3rem 0;
+  background-image : url(../img/section-three.jpg);
+  background-repeat: no-repeat;
+  background-size  : cover;
+  object-position  : center;
+}
+
+.channel-yt__title {
+  margin-bottom: 1.25rem;
+  font-size : 2rem;
+  text-align: center;
+  color     : var(--white-color);
+}
+
+.channel-yt__videos {
+  display: grid;
+  grid-template-areas: 'video1'
+                       'video2'
+                       'video3';
+  justify-items: center;
+  gap: 1.5rem;
+}
+
+.channel-yt__video:nth-child(1) {
+  grid-area: video1;
+}
+
+.channel-yt__video:nth-child(2) {
+  grid-area: video2;
+}
+
+.channel-yt__video:nth-child(3) {
+  grid-area: video3;
+}
+
+.channel-yt__video {
+  width: 80%;
+  height: 350px;
+  background-color: var(--primary-color);
+}
+
+
+/* Responsive */
+
 @media (min-width: 768px) {
   .services__container {
     flex-flow: row wrap;
   }
 
   .services__service {
-    width: 40%;
+    width  : 40%;
     padding: 1rem;
   }
 }
 
 @media (min-width: 1200px) {
   .services__title {
-    font-size: 2rem;
+    font-size    : 2rem;
     margin-bottom: 2rem;
   }
 
@@ -109,6 +153,30 @@ body {
   }
 
   .services__service {
-    width: 30vw;
+    width: 30%;
+  }
+
+  .channel-yt__videos {
+    grid-template-columns: repeat(3, minmax(300px, auto));
+    grid-template-rows: repeat(2, 1fr);
+    gap: 0;
+  }
+
+  .channel-yt__video:nth-child(1) {
+    grid-column: 1 / 2;
+  }
+  
+  .channel-yt__video:nth-child(2) {
+    grid-column: 2 / 3;
+  }
+  
+  .channel-yt__video:nth-child(3) {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+  }
+
+  .channel-yt__video {
+    width: 350px;
+    height: 250px;
   }
 }
