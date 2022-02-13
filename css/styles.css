@@ -1,5 +1,5 @@
 @import url(./normalize.css);
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Poppins:wght@400;700&display=swap');
 
 :root {
   --primary-color     : #9A1252;
@@ -11,11 +11,17 @@
   --black-color       : #000;
   --black-color-alpha : #000000bf;
   --white-color       : #fff;
+  --border-radius     : 1rem;
   --z-back            : -10;
   --z-normal          : 1;
   --z-tooltip         : 10;
   --z-fixed           : 100;
   --z-modal           : 1000;
+  
+  /* Scroll styles firefox */
+  scroll-behavior     : smooth;
+  scrollbar-color     : var(--primary-color) var(--black-color);
+  scrollbar-width     : thin;
 }
 
 body {
@@ -24,12 +30,39 @@ body {
   position   : relative;
 }
 
+/* Scroll styles chrome */
+body::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+body::-webkit-scrollbar-button:increment,
+body::-webkit-scrollbar-button {
+  display: none;
+}
+
+body::-webkit-scrollbar:vertical {
+  width: .5rem;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+}
+
+body::-webkit-scrollbar-track {
+  background-color: var(--black-color);
+}
+
 body .hidden {
   opacity: 0;
 }
 
 body .none {
   display: none;
+}
+
+h2,
+h3 {
+  font-family: 'Montserrat', sans-serif;
 }
 
 .charging {
@@ -59,7 +92,7 @@ body .none {
 
 .background-one {
   width            : 100%;
-  height           : 100vh;
+  padding-bottom   : 2rem;
   background-image : url(./../img/section-one.jpg);
   background-repeat: no-repeat;
   background-size  : cover;
@@ -101,7 +134,7 @@ body .none {
   width          : 150px;
   text-align     : center;
   background     : var(--primary-color);
-  border-radius  : 20px;
+  border-radius  : var(--border-radius);
   margin         : 10px 0;
   padding        : .75rem 1rem;
   transition     : all .7s ease;
@@ -140,11 +173,11 @@ body .none {
 
 .home__button a {
   padding         : 4px 35px;
-  border-radius   : 15px;
+  border-radius   : var(--border-radius);
   text-decoration : none;
   background-color: var(--primary-color);
   color           : var(--white-color);
-
+  transition      : transform .5s ease;
 }
 
 .home__button {
@@ -287,9 +320,11 @@ body .none {
 }
 
 .redes__btn {
+  width        : 240px;
+  height       : 65px;
   display      : inline-block;
   padding      : 1.25rem;
-  border-radius: 3.5px;
+  border-radius: var(--border-radius);
   margin       : 10px 0px;
   transition   : transform .5s ease;
 }
@@ -304,6 +339,10 @@ body .none {
 
 .buttom3 {
   background-color: #EE0000;
+}
+
+.buttom4 {
+  background-color: var(--black-color);
 }
 
 .channel-yt {
@@ -323,30 +362,16 @@ body .none {
 }
 
 .channel-yt__videos {
-  display            : grid;
-  grid-template-areas: 'video1'
-    'video2'
-    'video3';
-  justify-items: center;
-  gap          : 1.5rem;
-}
-
-.channel-yt__video:nth-child(1) {
-  grid-area: video1;
-}
-
-.channel-yt__video:nth-child(2) {
-  grid-area: video2;
-}
-
-.channel-yt__video:nth-child(3) {
-  grid-area: video3;
+  display        : flex;
+  justify-content: space-evenly;
+  align-items    : center;
+  flex-direction : column;
 }
 
 .channel-yt__video {
   width : 90%;
   height: 315px;
-  margin: 0 auto;
+  margin: 1rem auto;
 }
 
 .channel-yt__video iframe {
@@ -387,7 +412,7 @@ body .none {
   margin-top      : 5rem;
   padding         : 1rem 2rem;
   font-size       : 1.5rem;
-  border-radius   : 1rem;
+  border-radius   : var(--border-radius);
   text-decoration : none;
   background-color: var(--primary-color);
   color           : var(--white-color);
@@ -423,6 +448,7 @@ body .none {
 .footer__title {
   width          : 100%;
   display        : flex;
+  flex-direction : column;
   justify-content: space-evenly;
   align-items    : center;
   color          : var(--white-color);
@@ -439,6 +465,7 @@ body .none {
 .footer__policy a {
   text-decoration: none;
   margin         : 2rem;
+  transition     : all .5s ease;
 }
 
 .footer__redes {
@@ -447,8 +474,10 @@ body .none {
 }
 
 .footer__redes a {
-  font-size: 2rem;
-  padding  : 1rem;
+  font-size    : 2rem;
+  padding      : 1rem;
+  border-radius: var(--border-radius);
+  transition   : transform .5s ease;
 }
 
 .footer__copy {
@@ -529,6 +558,10 @@ body .none {
     height: 400px;
   }
 
+  .footer__title {
+    flex-direction: row;
+  }
+
   .footer__policy a {
     font-size: 1rem;
   }
@@ -563,6 +596,10 @@ body .none {
     text-align: center;
   }
 
+  .home__button a:hover {
+    transform: scale(1.1);
+  }
+
   .about img {
     display: flex;
     width  : 20%;
@@ -586,7 +623,7 @@ body .none {
   }
 
   .redes__btn {
-    margin : 0 2rem;
+    margin: 0 2rem;
   }
 
   .redes__btn:hover {
@@ -594,26 +631,11 @@ body .none {
   }
 
   .channel-yt__videos {
-    grid-template-columns: repeat(3, minmax(300px, auto));
-    grid-template-rows   : repeat(2, 1fr);
-    gap                  : 0;
-  }
-
-  .channel-yt__video:nth-child(1) {
-    grid-column: 1 / 2;
-  }
-
-  .channel-yt__video:nth-child(2) {
-    grid-column: 2 / 3;
-  }
-
-  .channel-yt__video:nth-child(3) {
-    grid-column: 3 / 4;
-    grid-row   : 1 / 2;
+    flex-direction: row;
   }
 
   .channel-yt__video {
-    width : 100%;
+    width : 40%;
     height: 315px;
   }
 
@@ -639,5 +661,13 @@ body .none {
   .footer__redes a {
     font-size: 1.5rem;
     margin   : 0 1rem;
+  }
+
+  .footer__redes a:hover {
+    transform: scale(1.1);
+  }
+
+  .footer__policy a:hover {
+    color: var(--primary-color);
   }
 }
