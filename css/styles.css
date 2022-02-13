@@ -30,6 +30,24 @@ body {
   position   : relative;
 }
 
+.container {
+  max-width: 1300px;
+  margin   : 0 auto;
+}
+
+body .hidden {
+  opacity: 0;
+}
+
+body .none {
+  display: none;
+}
+
+h2,
+h3 {
+  font-family: 'Montserrat', sans-serif;
+}
+
 /* Scroll styles chrome */
 body::-webkit-scrollbar {
   -webkit-appearance: none;
@@ -52,19 +70,6 @@ body::-webkit-scrollbar-track {
   background-color: var(--black-color);
 }
 
-body .hidden {
-  opacity: 0;
-}
-
-body .none {
-  display: none;
-}
-
-h2,
-h3 {
-  font-family: 'Montserrat', sans-serif;
-}
-
 .charging {
   position       : fixed;
   left           : 0;
@@ -83,11 +88,6 @@ h3 {
 .charj {
   width : 200px;
   height: 200px;
-}
-
-.container {
-  max-width: 1300px;
-  margin   : 0 auto;
 }
 
 .background-one {
@@ -285,10 +285,6 @@ h3 {
 
 .services__text p {
   margin: 1rem 0;
-}
-
-.services__price {
-  font-weight: 700;
 }
 
 /* Section Channel YT */
